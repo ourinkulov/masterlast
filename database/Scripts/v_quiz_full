@@ -1,0 +1,20 @@
+create VIEW v_quiz_full as
+SELECT
+q.id,
+q.question,
+q.ans1,
+q.ans2,
+q.ans3,
+q.ans4,
+q.ans5,
+q.creator_id,
+q.creator,
+q.quizzes_id,
+qu.quizName,
+c.id as cid,
+c.fanName
+FROM
+questions q
+left JOIN quizzes qu on q.quizzes_id=qu.id
+left JOIN comples c on qu.kursid=c.id
+

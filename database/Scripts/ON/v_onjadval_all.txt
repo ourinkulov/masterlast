@@ -1,0 +1,37 @@
+create VIEW v_onjadval_new AS
+SELECT
+s.id,
+s.name,
+o.comples_id,
+o.onid,
+s.gid,
+sum(IFNULL(o.baho,0)) as baho
+from 
+onjurnals o
+left JOIN v_students s on o.uid=s.id
+group BY
+s.id,
+s.name,
+o.comples_id,
+o.onid,
+s.gid
+order by s.id
+
+create VIEW v_onjadval_new AS
+SELECT
+s.id,
+s.name,
+o.comples_id,
+o.onid,
+s.guruh,
+sum(IFNULL(o.baho,0)) as baho
+from 
+onjurnals o
+left JOIN v_students s on o.uid=s.id
+group BY
+s.id,
+s.name,
+o.comples_id,
+o.onid,
+s.guruh
+order by s.id

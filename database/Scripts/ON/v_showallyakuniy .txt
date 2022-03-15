@@ -1,0 +1,16 @@
+CREATE VIEW v_showallyakuniy AS
+SELECT
+s.id,
+s.name,
+s.gid,
+j.comple_id,
+sum(IFNULL(j.baho,0)) as yakuniy
+from 
+ynjurnals j
+left JOIN v_students s on j.user_id=s.id
+group BY  
+s.id,
+s.name,
+s.gid,
+j.comple_id
+order by s.id

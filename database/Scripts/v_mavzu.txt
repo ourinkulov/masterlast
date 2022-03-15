@@ -1,0 +1,13 @@
+create VIEW v_mavzu as 
+SELECT
+m.id,
+m.fanid,
+c.fanName,
+m.title,
+m.maruza,
+m.slayd,
+m.video,
+m.created_at
+FROM
+mavzus m 
+LEFT JOIN v_comples c on m.fanid=c.id

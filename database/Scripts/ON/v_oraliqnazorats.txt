@@ -1,0 +1,19 @@
+create VIEW v_oraliqnazorat AS
+SELECT
+o.id,
+o.name,
+o.comples_id,
+c.fan,
+c.fanName,
+c.sid,
+c.studyyear,
+c.semid,
+c.semestrName,
+o.status,
+o.creator,
+o.deletor,
+o.created_at,
+o.updated_at
+FROM
+oraliqnazorats o 
+LEFT JOIN v_comples c on o.comples_id=c.id

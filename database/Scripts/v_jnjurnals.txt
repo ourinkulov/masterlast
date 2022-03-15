@@ -1,0 +1,18 @@
+CREATE VIEW v_jnjurnals AS
+SELECT
+u.id,
+u.name,
+u.gid,
+u.group,
+u.kid,
+u.kurs,
+j.id as jnjurnalid,
+jn.id as jnid,
+jn.name as jnName,
+j.baho,
+j.status,
+j.created_at
+FROM
+v_students u 
+LEFT JOIN jnjurnals j on u.id=j.uid
+LEFT JOIN joriynazorats jn on j.jnid=jn.id

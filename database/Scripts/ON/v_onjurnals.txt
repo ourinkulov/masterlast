@@ -1,0 +1,38 @@
+CREATE VIEW v_onjurnals AS
+SELECT
+g.sid,
+g.name,
+g.randomnum,
+o.baho,
+o.onid,
+o.status,
+o.status2,
+n.name as onName,
+g.comples_id,
+g.gid,
+g.group,
+g.kid,
+g.kurs
+FROM
+v_ongenerate g
+LEFT JOIN onjurnals o on g.sid=o.uid and g.onid=o.onid
+LEFT JOIN oraliqnazorats n on o.onid=n.id
+
+CREATE VIEW v_onjurnals2 AS
+SELECT
+o.id,
+o.user_id,
+s.name,
+g.randomnum,
+o.comples_id,
+o.onid,
+o.baho,
+o.status,
+o.status2,
+o.created_at,
+o.creator,
+s.gid
+FROM
+onjurnals o 
+LEFT JOIN ongenerates g on o.user_id=g.uid and o.comples_id=g.comples_id and o.onid=g.onid
+LEFT JOIN v_students s on o.user_id=s.id

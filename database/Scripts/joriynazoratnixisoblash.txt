@@ -1,0 +1,8 @@
+SELECT
+s.name,
+sum(IFNULL(j.baho,0))
+from 
+jnjurnals j
+left JOIN v_students s on j.uid=s.id
+where j.jnid=2
+group BY s.name

@@ -1,0 +1,13 @@
+create VIEW v_quiz as
+select
+q.id,
+q.quizName,
+k.id as kursid,
+k.fanName,
+k.fName,
+k.studyyear,
+k.semestrName,
+k.kurs,
+q.creator_id
+FROM quizzes q
+LEFT JOIN v_comples k on q.kursid=k.id

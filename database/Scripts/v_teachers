@@ -1,0 +1,1 @@
+create VIEW v_teachers as SELECT * FROM `users` WHERE role=2

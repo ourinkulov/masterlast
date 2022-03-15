@@ -1,0 +1,8 @@
+create VIEW v_fanTokafedras AS
+select
+f.id,
+f.fName,
+k.kafName,
+k.id as kid
+FROM
+fans f LEFT JOIN kafedras k on f.kafId=k.id

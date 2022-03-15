@@ -1,0 +1,25 @@
+CREATE VIEW v_comples as
+SELECT
+c.id,
+c.fan,
+sy.id as sid,
+sy.studyyear,
+s.id as semid,
+s.semestrName,
+f.id as fid,
+f.fName,
+t.id as uid,
+t.name,
+t.role,
+k.id as kid,
+k.kurs,
+g.id as gid,
+g.group
+FROM
+comples c
+LEFT JOIN studyyears sy on c.studyyear=sy.id
+left JOIN semestrs s on c.semestr=s.id
+left JOIN kurs k on c.kurs=k.id
+LEFT JOIN guruhs g on c.guruh=g.id
+LEFT JOIN v_usertokafedra t on c.teacher=t.id
+LEFT JOIN fans f on c.fan=f.id

@@ -1,0 +1,36 @@
+create view v_jnjadval as 
+SELECT
+s.id,
+s.name,
+sum(IFNULL(j.baho,0)) as jn
+from 
+jnjurnals j
+left JOIN v_students s on j.uid=s.id
+group BY  s.id,s.name
+order by s.id
+
+
+CREATE VIEW v_jnjadval_new AS
+SELECT
+s.id,
+s.name,
+j.comples_id,
+
+j.jnid,
+s.gid,
+
+c.semestrName,
+sum(IFNULL(j.baho,0)) as jn
+from 
+jnjurnals j
+left JOIN v_students s on j.uid=s.id
+LEFT JOIN v_comples c on j.comples_id=c.id
+group BY
+s.id,
+s.name,
+j.comples_id,
+
+j.jnid,
+s.gid,
+c.semestrName
+order by s.id

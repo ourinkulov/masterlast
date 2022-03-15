@@ -1,0 +1,36 @@
+SELECT 
+o.id,
+u.id as sid,
+u.name,
+o.randomnum,
+u.gid,
+u.group,
+u.kid,
+u.kurs,
+o.comples_id,
+o.onid,
+o.status,
+o.created_at,
+o.updated_at
+FROM
+v_students u 
+LEFT JOIN ongenerates o on u.id=o.uid
+
+
+SELECT 
+o.id,
+u.id as sid,
+u.name,
+o.randomnum,
+u.guruh,
+u.group,
+u.kafid,
+u.kurs,
+o.comples_id,
+o.onid,
+o.status,
+o.created_at,
+o.updated_at
+FROM
+v_students u 
+LEFT JOIN ongenerates o on u.id=o.uid

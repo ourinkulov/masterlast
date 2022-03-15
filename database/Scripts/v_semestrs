@@ -1,0 +1,9 @@
+create VIEW v_semestrs as
+SELECT
+s.id,
+s.semestrName,
+sy.studyyear,
+s.created_at,
+s.updated_at
+FROM
+semestrs s LEFT JOIN studyyears  sy on s.studyyearID=sy.id

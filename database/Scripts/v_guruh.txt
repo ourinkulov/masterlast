@@ -1,0 +1,9 @@
+CREATE VIEW v_guruh AS
+SELECT
+g.id,
+g.group,
+g.kurs as kid,
+k.kurs
+FROM
+guruhs g 
+LEFT JOIN kurs k on g.kurs=k.id

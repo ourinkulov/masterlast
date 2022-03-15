@@ -1,0 +1,10 @@
+create VIEW v_userTokafedra
+AS
+SELECT
+u.id,
+u.kafid,
+u.name,
+u.email,
+k.kafName
+FROM
+users u left join kafedras k on u.kafid=k.id WHERE u.role=2

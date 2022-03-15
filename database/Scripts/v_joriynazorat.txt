@@ -1,0 +1,13 @@
+CREATE VIEW v_joriynazorat as
+SELECT
+j.id,
+j.name,
+c.id as comples_id,
+c.fName,
+c.sid,
+c.studyyear,
+c.semid,
+c.semestrName
+FROM
+joriynazorats j 
+LEFT JOIN v_comples c on j.comples_id=c.id

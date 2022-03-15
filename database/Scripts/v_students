@@ -1,0 +1,14 @@
+CREATE VIEW v_students as
+select
+u.id,
+u.name,
+u.email,
+u.password,
+k.kurs,
+g.group
+FROM
+users u
+left JOIN guruhs g on u.guruh=g.id
+left JOIN kurs k on g.kurs=k.id
+WHERE u.role=3
+ORDER BY id DESC

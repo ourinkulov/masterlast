@@ -1,0 +1,16 @@
+CREATE VIEW v_joriysumpocomples AS
+SELECT
+s.id,
+s.name,
+s.gid,
+j.comples_id,
+sum(IFNULL(j.baho,0)) as jn
+from 
+jnjurnals j
+left JOIN v_students s on j.uid=s.id
+group BY  
+s.id,
+s.name,
+s.gid,
+j.comples_id
+order by s.id

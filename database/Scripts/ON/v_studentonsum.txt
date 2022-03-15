@@ -1,0 +1,16 @@
+CREATE VIEW v_studentonsum AS
+SELECT
+s.id,
+s.name,
+s.gid,
+j.comples_id,
+sum(IFNULL(j.baho,0)) as oraliq
+from 
+onjurnals j
+left JOIN v_students s on j.user_id=s.id
+group BY  
+s.id,
+s.name,
+s.gid,
+j.comples_id
+order by s.id

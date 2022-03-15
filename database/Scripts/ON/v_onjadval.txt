@@ -1,0 +1,11 @@
+CREATE VIEW
+v_onjadval as 
+SELECT
+onjur.id,
+onjur.uid,
+s.name,
+sum(IFNULL(onjur.baho,0)) as onsum
+FROM
+onjurnals onjur 
+LEFT JOIN v_students s on onjur.uid=s.id
+GROUP BY onjur.id, onjur.uid, s.name

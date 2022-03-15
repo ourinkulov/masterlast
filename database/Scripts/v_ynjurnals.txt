@@ -1,0 +1,17 @@
+CREATE VIEW v_ynjurnals AS
+SELECT
+u.id,
+u.name,
+u.gid,
+u.group,
+u.kurs,
+j.id as jnjurnalid,
+jn.id as jnid,
+jn.name as jnName,
+j.baho,
+jn.comples_id,
+j.created_at
+FROM
+v_students u 
+LEFT JOIN ynjurnals j on u.id=j.user_id
+LEFT JOIN yakuniynazorats jn on j.ynid=jn.id

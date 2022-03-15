@@ -1,0 +1,39 @@
+CREATE VIEW v_gennumbers AS
+SELECT
+o.id,
+u.id as uid,
+u.name,
+o.randomnum,
+o.comples_id,
+o.onid,
+u.gid,
+u.group,
+u.kid,
+u.kurs,
+o.created_at,
+o.updated_at
+FROM
+v_students u 
+LEFT JOIN ongenerates o on u.id=o.uid
+ORDER BY o.randomnum
+
+
+
+CREATE VIEW v_gennumbers AS
+SELECT
+o.id,
+u.id as uid,
+u.name,
+o.randomnum,
+o.comples_id,
+o.onid,
+u.guruh,
+u.group,
+u.kafid,
+u.kurs,
+o.created_at,
+o.updated_at
+FROM
+v_students u 
+LEFT JOIN ongenerates o on u.id=o.uid
+ORDER BY o.randomnum

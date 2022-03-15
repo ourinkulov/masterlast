@@ -1,0 +1,16 @@
+CREATE VIEW v_questions AS
+SELECT
+qu.quizName,
+qu.kursid,
+q.id,
+q.quizzes_id,
+q.question,
+q.ans1,
+q.ans2,
+q.ans3,
+q.ans4,
+q.ans5,
+q.creator,
+q.creator_id
+FROM
+questions q LEFT JOIN quizzes qu on q.quizzes_id=qu.id

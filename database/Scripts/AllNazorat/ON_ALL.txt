@@ -1,0 +1,9 @@
+SELECT 
+s.id, 
+s.name, 
+jnjad.jn, 
+onjad.onsum 
+FROM 
+v_students s 
+LEFT JOIN v_jnjadval jnjad on s.id=jnjad.id 
+LEFT JOIN v_onjadval onjad on s.id=onjad.uid;
